@@ -1,0 +1,25 @@
+# Gradle
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+captures/
+local.properties
+
+# 构建产物（APK 通过 Release 分发，不进仓库）
+*.apk
+*.ap_
+*.dex
+output.json
+
+# 本机调试用的截图/临时文件
+tools/shots/
+*.hprof
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
