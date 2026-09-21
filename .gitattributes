@@ -1,0 +1,14 @@
+# 统一换行：Windows 上 core.autocrlf=true 会把 gradlew 存成 CRLF，
+# Linux/macOS 克隆后执行会报 "/usr/bin/env: 'sh\r': No such file or directory"
+* text=auto eol=lf
+gradlew text eol=lf
+*.sh text eol=lf
+
+# Windows 批处理必须 CRLF
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# 二进制文件不做换行转换
+*.jar binary
+*.apk binary
+*.png binary
