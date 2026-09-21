@@ -1,4 +1,6 @@
-# VirtualCast · 虚拟投屏
+# 虚拟投屏（VirtualCast）
+
+> 项目中文名：**虚拟投屏** · 仓库名：`VirtualCast`（GitHub 仓库名只允许 ASCII，中文名会被系统剥离，详见文末说明）
 
 在 Android 设备上**列出所有屏幕（含虚拟屏 / 副屏）→ 抓取指定屏幕的画面 → 在窗口里实时显示 → 反向操控那块屏**。
 
@@ -29,10 +31,10 @@
 
 ## 安装
 
-从 [Releases](../../releases) 下载 `app-debug.apk` 安装：
+从 [Releases](../../releases) 下载安装包（页面上显示为 **虚拟投屏 v1.0.0 APK**，实际文件名 `VirtualCast-v1.0.0.apk`）：
 
 ```bash
-adb install -r app-debug.apk
+adb install -r VirtualCast-v1.0.0.apk
 ```
 
 ## 使用
@@ -111,6 +113,25 @@ tools/uitap.py            真机自动化调试脚本（按 resource-id 定位�
 > **不受此限制的功能**（都是非触摸方式，稳定可用）：在目标屏**启动任意应用**、`force-stop` 停止应用、返回/Home/最近任务按键。
 
 另外本工具**不创建虚拟屏**——只检测并使用设备上已有的屏幕。
+
+## 关于项目命名
+
+本项目中文名为 **虚拟投屏**。应用内显示名、仓库描述、README 标题、Release 标题、APK 下载显示名均为中文。
+
+GitHub 对**仓库名**与**发布资产的文件名**只接受 ASCII，其余字符会被服务端直接剥离（不是报错，是静默丢弃）。实测记录：
+
+| 提交内容 | 服务端实际结果 |
+|---|---|
+| 仓库名 `测试中文名检测xyz` | `-xyz` |
+| 仓库名 `虚拟投屏_v2` | `-_v2` |
+| 仓库名 `虚拟投屏` | 报错 `name already exists`（剥离后与已有仓库重名） |
+| 资产文件名 `虚拟投屏-v1.0.0.apk` | `-v1.0.0.apk` |
+
+所以：
+
+- 仓库名保留英文代号 `VirtualCast`
+- APK 文件名保留 `VirtualCast-v1.0.0.apk`
+- 中文名通过**仓库描述、README 标题、Release 标题（虚拟投屏 v1.0.0）**以及**资产的 label 字段（虚拟投屏 v1.0.0 APK）**体现
 
 ## License
 
